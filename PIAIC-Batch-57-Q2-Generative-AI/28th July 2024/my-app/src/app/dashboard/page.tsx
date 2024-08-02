@@ -3,7 +3,7 @@ import React from 'react'
 function Dashboard() {
   return (
     <div>
-        This is the navbar
+        This is the dashboard
     </div>
   )
 }

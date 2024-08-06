@@ -6,7 +6,13 @@ const findBlogDetails = (id: number) => {
     return item.id == id
   })
 }
-function BlogDetails({ params }:{params:{slug:string}}) {
+
+type paramsDataType = {
+  params:{
+    slug: string
+  }
+}
+function BlogDetails({ params }: paramsDataType) {
     const blog = findBlogDetails(Number(params.slug))
   return (
     <div>

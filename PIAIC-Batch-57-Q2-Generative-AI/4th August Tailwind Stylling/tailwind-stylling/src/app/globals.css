@@ -6,9 +6,9 @@ h1{
   @apply border p-10 m-8 border-red-600;
 }
 
-@layer{
+@layer components{
   .custom-container{
-    @apply 	border-8 p-10 m-8 border-red-950;
+    @apply border-8 p-10 m-8 border-red-300;
   }
 }
 

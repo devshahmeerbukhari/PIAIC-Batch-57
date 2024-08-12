@@ -1,6 +1,7 @@
 # Navigating with Next.js AND useRouter Hook
     -This assignment involves creating a simple Next.js project with two main components: a homepage and a name page. Students will utilize the Link component from Next.js to enable navigation between these pages. The assignment aims to teach the basics of linking and navigating within Next.js applications, emphasizing the use of the Link component for navigation and the useRouter() hook for programmatic route changes when necessary.
-    - Link: https://github.com/panaverse/learn-nextjs/tree/main/step02_linking?authuser=0
+# Helping Link:
+Link: https://github.com/panaverse/learn-nextjs/tree/main/step02_linking?authuser=0
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).

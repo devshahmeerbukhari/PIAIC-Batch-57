@@ -5,6 +5,10 @@ import { useState } from 'react'
 import Cell from './Cell'
 import PlayersTurn from './PlayersTurn'
 
+
+export const firstTurn: string = "Player 1"
+export const secondTurn: string = "Player 2" 
+
 function Gameboard({board}:{
   board :any[]
 }) {
@@ -22,7 +26,7 @@ function Gameboard({board}:{
     setTie(tie + 1)
   }
 
-
+  const [playerTurn, setTurn] = useState(firstTurn)
   return (
     <div className='flex flex-col justify-center items-center bg-black text-white h-screen'>
       {/* <div className='grid grid-cols-3 p-10'>
@@ -37,11 +41,11 @@ function Gameboard({board}:{
           <div className='div border-t-4'>9</div>
       </div> */}
       <div>
-        <PlayersTurn />
+        <PlayersTurn playersTurn={playerTurn} />
       </div>
       <div className='grid grid-cols-3 bg-black'>
        { board.map((value, index) => (
-        <Cell key={index} index={index} pading='p-20' borderRight={value[1]} borderTop={value[2]} value={value[0]} />
+        <Cell key={index} pading='p-20' borderRight={value[1]} borderTop={value[2]} setTurn ={setTurn} playerTurn={playerTurn}/>
        ))}
       </div>
       <div>

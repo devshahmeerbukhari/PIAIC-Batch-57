@@ -1,9 +1,11 @@
 import React from 'react'
 
-function PlayersTurn() {
+function PlayersTurn({playersTurn}:{
+  playersTurn: string
+}) {
   return (
-    <div>
-      
+    <div className='mb-20'>
+      {`This is ${playersTurn} Turn`}
     </div>
   )
 }

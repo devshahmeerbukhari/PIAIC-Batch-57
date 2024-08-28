@@ -1,27 +1,21 @@
 import React from 'react'
-import { useState } from 'react'
-import { secondTurn } from './Gameboard'
-import { firstTurn } from './Gameboard'
 
-function Cell({borderRight, borderTop, pading, setTurn, playerTurn}:{
+function Cell({Value, borderRight, borderTop, pading, index, onCellClick, checkResult}:{
+    Value: string,
     borderRight: string,
     borderTop: string,
     pading: string,
-    setTurn: any,
-    playerTurn: string
+    onCellClick: any,
+    index: number,
+    checkResult: any
 }) {
-  const [Value, setValue] = useState(' ')
-
+  // score[4] = 12;
+  // score[5] = 10;
   const updateState = () =>{
     if(Value === ' '){
-      if(playerTurn === firstTurn){
-        setValue('X'); 
-        setTurn(secondTurn)
-      } else{
-        setValue('O'); 
-        setTurn(firstTurn)
-      }
+      onCellClick(index)
     }
+    checkResult();
   }
   return (
 

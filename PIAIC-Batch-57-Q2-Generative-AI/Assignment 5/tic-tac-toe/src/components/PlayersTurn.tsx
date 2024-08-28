@@ -5,7 +5,7 @@ function PlayersTurn({playersTurn}:{
 }) {
   return (
     <div className='mb-20'>
-      {`This is ${playersTurn} Turn`}
+      {`This is Player ${playersTurn} Turn`}
     </div>
   )
 }

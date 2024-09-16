@@ -16,10 +16,12 @@ function Blog() {
         setPostData(data)
     }
   return (
-    <div>
-        {postData.map((post:any, index)=>(
-            <PostCards key={index} Title={post.title} Body = {post.body}/>
-        ))}
+    <div className='flex flex-wrap justify-center'>
+        {postData.map((post:any)=> {
+            return (
+                <PostCards key={post.id} Title={post.title} Body = {post.body}/>
+            )
+        })}
     </div>
   )
 }

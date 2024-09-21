@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import PostCards from '@/components/PostCards/PostCards'
+import Link from 'next/link'
 
 function Blog() {
 
@@ -19,7 +20,9 @@ function Blog() {
     <div className='flex flex-wrap justify-center'>
         {postData.map((post:any)=> {
             return (
-                <PostCards key={post.id} Title={post.title} Body = {post.body}/>
+                <Link href={`/Blog/${post.id}`}>
+                    <PostCards key={post.id} Title={post.title} Body = {post.body}/>
+                </Link>
             )
         })}
     </div>

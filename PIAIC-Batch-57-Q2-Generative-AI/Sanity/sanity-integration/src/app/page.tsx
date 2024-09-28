@@ -1,10 +1,8 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <main className="p-10">
+    <main>
       <div className="flex justify-center items-center">
-        <p className="font-bold text-lg">Sanity Integration</p>
+        <h1 className="font-bold mt-10 text-lg">Sanity Integration</h1>
       </div>
     </main>
   );

@@ -1,2 +1,11 @@
-import { defineField, defineType } from "sanity/lib/index.mjs";
+import {defineField, defineType} from 'sanity'
 
+export const petType = defineType({
+    name: "pet",
+    title: "Pet",
+    type: "document",
+    fields: [defineField({
+        name: 'Name',
+        type: 'string',
+    })],
+});

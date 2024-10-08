@@ -10,7 +10,7 @@ export default async function Home() {
   return (
     <>
       <div className="flex justify-center p-5 font-bold bg-slate-400">
-        Sanity Integration 00
+        Hotels data using Sanity
       </div>
       <div className="grid grid-cols-3 gap-5 m-5">
         {hotels.map((hotel:any) => (

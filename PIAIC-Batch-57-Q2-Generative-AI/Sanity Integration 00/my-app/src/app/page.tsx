@@ -1,19 +1,30 @@
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 const getHotels = async () =>{
   return await client.fetch(`*[_type == "Hotels"]`);
 }
+
+type Hotel = {
+  _id: string;
+  Name: string;
+  Address: string;
+  Phone: string;
+  Title?: string;
+  Image: SanityImageSource;
+  [key: string]: unknown;  // Allow additional unknown fields
+};
 export default async function Home() {
-  const hotels = await getHotels();
+  const hotels:Hotel[] = await getHotels();
   return (
     <>
       <div className="flex justify-center p-5 font-bold bg-slate-400">
         Hotels data using Sanity
       </div>
       <div className="grid grid-cols-3 gap-5 m-5">
-        {hotels.map((hotel:any) => (
+        {hotels.map((hotel:Hotel) => (
           <div key={hotel._id} className="border rounded-md shadow-lg p-5 mt-4">
             <Image
               src={urlFor(hotel.Image).url()} 

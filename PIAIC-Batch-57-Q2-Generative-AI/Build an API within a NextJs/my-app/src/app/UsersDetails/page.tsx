@@ -1,12 +1,10 @@
 'use client'
 import { useEffect, useState } from 'react'
 import React from 'react'
+import AddUser from '../AddUser/page'
+import { User } from '../types/user'
 
 
-type User = {
-    name: string,
-    email: string,
-}
 function UserDetails() {
     const [userDetails, setUserDetails] = useState([])
 
@@ -21,7 +19,9 @@ function UserDetails() {
         //console.log("User Data in component: ", userData);
     }
   return (
-    <div className="flex justify-center mt-10">
+    <>
+        <AddUser/>
+        <div className="flex justify-center mt-10">
             <div className="overflow-x-auto">
                 {userDetails.length > 0 && ( // Conditionally render the table if userDetails is not empty
                     <table className="min-w-full bg-white border border-gray-300 rounded-lg shadow-lg">
@@ -45,7 +45,8 @@ function UserDetails() {
                     <div className="text-center text-gray-500 mt-4">Loading data...</div>
                 )}
             </div>
-    </div>
+        </div>
+    </>
   )
 }
 

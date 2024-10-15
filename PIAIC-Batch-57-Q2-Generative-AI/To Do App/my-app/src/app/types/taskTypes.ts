@@ -3,8 +3,8 @@ export type Task = {
     title: string;
     completed: boolean;
   };
-  
-export type TasksToDoProps = {
-    tasks: Task;
-    setTasks: any;
-}
+
+  export interface TasksToDoProps {
+      task: Task;
+      setTask: React.Dispatch<React.SetStateAction<Task[]>>;
+  }

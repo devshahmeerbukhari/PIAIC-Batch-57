@@ -3,9 +3,7 @@ import mongoose from "mongoose";
 type ConnectionObject = {
     isConnected?: number
 }
-
 const connection: ConnectionObject = {}
-
 
 /*here void mean i dont need to care about the returning data*/
 async function dbConnect(): Promise<void>{

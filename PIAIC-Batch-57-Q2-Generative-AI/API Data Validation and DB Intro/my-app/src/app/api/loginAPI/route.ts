@@ -14,10 +14,11 @@ export async function POST(req: Request) {
         const parseData = LoginSchema.parse(body);
         return NextResponse.json({message: "User Login API", parseData})
     }catch(error){
-        console.log("Error C: ", error)
+        //console.log("Error C: ", error)
         if (error instanceof z.ZodError){
             //Return validation error if zod falidation failds
             return NextResponse.json({
+                message: "Zod Erro: ",
                 errors: error.errors
             }, {
                 status: 400,

@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { LoginSchema } from '@/lib/validation/schema';
+import Link from 'next/link';
 
 
 type UserLogin = {
@@ -78,7 +79,10 @@ function SignInForm() {
           />
           <div className='text-red-600 h-5'>{error.password}</div>
         </div>
-        <p className="mb-4 text-sm text-gray-600">Don't have an account? <a href="" className="text-indigo-600 hover:underline">Register</a></p>
+        <p className="mb-4 text-sm text-gray-600">Don't have an account? 
+          
+          <Link href={"/registrationForm"} className="text-indigo-600 hover:underline">Register</Link>
+        </p>
         <Button onClick={handleSubmit} className="px-4 py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-700">Sign In</Button>
       </div>
     </div>

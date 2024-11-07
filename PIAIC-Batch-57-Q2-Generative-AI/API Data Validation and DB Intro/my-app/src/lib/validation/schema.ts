@@ -10,3 +10,14 @@ export const LoginSchema = z.object({
     .string()
     .min(6, {message: "Password must be of atleast 6 character(s)"})
 })
+
+
+export const registerSchema = z.object({
+    email: z.string().email(),
+    password: z.string().min(6),
+    role: z
+      .string({
+        required_error: "Please select an role for user",
+      })
+      .min(1),
+  });
